@@ -12,7 +12,7 @@ class BottomBarContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Container(
-      width: MediaQuery.of(context).size.width / 5,
+      width: MediaQuery.of(context).size.width / 3,
       color: colors,
       child: Material(
         color: Colors.black87,

@@ -34,7 +34,8 @@ SignatureController _controller =
 class ImageEditorPro extends StatefulWidget {
   final Color appBarColor;
   final Color bottomBarColor;
-  ImageEditorPro({this.appBarColor, this.bottomBarColor});
+  File image;
+  ImageEditorPro({this.appBarColor, this.bottomBarColor,this.image,});
 
   @override
   _ImageEditorProState createState() => _ImageEditorProState();
@@ -86,6 +87,7 @@ class _ImageEditorProState extends State<ImageEditorPro> {
   @override
   void initState() {
     timers();
+    _image = widget.image;
     _controller.clear();
     type.clear();
     fontsize.clear();
@@ -163,12 +165,6 @@ class _ImageEditorProState extends State<ImageEditorPro> {
                           ),
                         );
                       });
-                }),
-            new IconButton(
-                icon: Icon(Icons.clear),
-                onPressed: () {
-                  _controller.points.clear();
-                  setState(() {});
                 }),
             new IconButton(
                 icon: Icon(Icons.camera),
@@ -388,37 +384,7 @@ class _ImageEditorProState extends State<ImageEditorPro> {
                       },
                       title: 'Eraser',
                     ),
-                    BottomBarContainer(
-                      icons: Icons.photo,
-                      ontap: () {
-                        showModalBottomSheet(
-                            context: context,
-                            builder: (context) {
-                              return ColorPiskersSlider();
-                            });
-                      },
-                      title: 'Filter',
-                    ),
-                    BottomBarContainer(
-                      icons: FontAwesomeIcons.smile,
-                      ontap: () {
-                        Future getemojis = showModalBottomSheet(
-                            context: context,
-                            builder: (BuildContext context) {
-                              return Emojies();
-                            });
-                        getemojis.then((value) {
-                          if (value != null) {
-                            type.add(1);
-                            fontsize.add(20);
-                            offsets.add(Offset.zero);
-                            multiwidget.add(value);
-                            howmuchwidgetis++;
-                          }
-                        });
-                      },
-                      title: 'Emoji',
-                    ),
+                    
                   ],
                 ),
               ));

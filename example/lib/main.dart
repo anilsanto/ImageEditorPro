@@ -28,6 +28,7 @@ class _HomePageState extends State<HomePage> {
       return ImageEditorPro(
         appBarColor: Colors.blue,
         bottomBarColor: Colors.blue,
+        image: _image,
       );
     })).then((geteditimage) {
       if (geteditimage != null) {
