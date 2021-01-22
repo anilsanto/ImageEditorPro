@@ -220,7 +220,7 @@ class _ImageEditorProState extends State<ImageEditorPro> {
           child: Screenshot(
             controller: screenshotController,
             child: Container(
-              margin: EdgeInsets.all(20),
+              margin: EdgeInsets.all(0),
               color: Colors.white,
               width: width.toDouble(),
               height: height.toDouble(),

@@ -58,7 +58,12 @@ class _HomePageState extends State<HomePage> {
               ),
             )
           : Center(
-              child: Image.file(_image),
+              child: InkWell(
+                child: Image.file(_image),
+                onTap: () {
+                  getimageditor();
+                },
+              ),
             ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.close),
