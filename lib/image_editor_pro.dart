@@ -35,7 +35,11 @@ class ImageEditorPro extends StatefulWidget {
   final Color appBarColor;
   final Color bottomBarColor;
   File image;
-  ImageEditorPro({this.appBarColor, this.bottomBarColor,this.image,});
+  ImageEditorPro({
+    this.appBarColor,
+    this.bottomBarColor,
+    this.image,
+  });
 
   @override
   _ImageEditorProState createState() => _ImageEditorProState();
@@ -85,8 +89,15 @@ class _ImageEditorProState extends State<ImageEditorPro> {
   }
 
   @override
-  void initState() {
+  void initState() async {
     timers();
+    if (widget.image != null) {
+      var decodedImage =
+          await decodeImageFromList(widget.image.readAsBytesSync());
+      height = decodedImage.height;
+      width = decodedImage.width;
+    }
+
     _image = widget.image;
     _controller.clear();
     type.clear();
@@ -384,7 +395,6 @@ class _ImageEditorProState extends State<ImageEditorPro> {
                       },
                       title: 'Eraser',
                     ),
-                    
                   ],
                 ),
               ));
