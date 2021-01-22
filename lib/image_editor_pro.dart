@@ -89,7 +89,7 @@ class _ImageEditorProState extends State<ImageEditorPro> {
   }
 
   @override
-  void initState() async {
+  Future initState() async {
     timers();
     if (widget.image != null) {
       var decodedImage =
@@ -97,7 +97,6 @@ class _ImageEditorProState extends State<ImageEditorPro> {
       height = decodedImage.height;
       width = decodedImage.width;
     }
-
     _image = widget.image;
     _controller.clear();
     type.clear();
