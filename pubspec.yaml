@@ -4,7 +4,7 @@ version: 1.0.6
 homepage: https://github.com/zeeshux7860/Image_editor_pro_package
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.10.0 <3.0.0"
 
 dependencies:
   flutter:
