@@ -369,7 +369,7 @@ class _ImageEditorProState extends State<ImageEditorPro> {
                             context,
                             MaterialPageRoute(
                                 builder: (context) => TextEditor()));
-                        if (value.toString().isEmpty) {
+                        if (value == null || value.toString().isEmpty) {
                           print("true");
                         } else {
                           type.add(2);
