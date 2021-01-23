@@ -11,9 +11,9 @@ class _TextEditorState extends State<TextEditor> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.white,
       appBar: new AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.white,
         actions: <Widget>[
           new IconButton(
               icon: Icon(FontAwesomeIcons.alignLeft), onPressed: () {}),
@@ -32,39 +32,40 @@ class _TextEditorState extends State<TextEditor> {
                 controller: name,
                 decoration: InputDecoration(
                   hintText: "Insert your message",
-                  hintStyle: TextStyle(color: Colors.white),
+                  hintStyle: TextStyle(color: Colors.black),
                   alignLabelWithHint: true,
                 ),
                 scrollPadding: EdgeInsets.all(20.0),
                 keyboardType: TextInputType.multiline,
                 maxLines: 99999,
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                 ),
                 autofocus: true,
-              )
+              ),
+              Container(
+                color: Theme.of(context).primaryColor,
+                padding: EdgeInsets.all(10),
+                child: new FlatButton(
+                  onPressed: () {
+                    Navigator.pop(context, name.text);
+                  },
+                  color: Colors.black,
+                  padding: EdgeInsets.all(15),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10)),
+                  child: new Text(
+                    "Add Text",
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 22,
+                        color: Colors.white),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
-      ),
-      bottomNavigationBar: new Container(
-        color: Colors.white,
-        padding: EdgeInsets.all(10),
-        child: new FlatButton(
-            onPressed: () {
-              Navigator.pop(context, name.text);
-            },
-            color: Colors.black,
-            padding: EdgeInsets.all(15),
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-            child: new Text(
-              "Add Text",
-              style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 22,
-                  color: Colors.white),
-            )),
       ),
     );
   }
