@@ -23,10 +23,9 @@ class _TextEditorState extends State<TextEditor> {
               icon: Icon(FontAwesomeIcons.alignRight), onPressed: () {}),
         ],
       ),
-      body: Center(
-        child: SingleChildScrollView(
+      body: SingleChildScrollView(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
               TextField(
                 controller: name,
@@ -44,13 +43,13 @@ class _TextEditorState extends State<TextEditor> {
                 autofocus: true,
               ),
               Container(
-                color: Theme.of(context).primaryColor,
-                padding: EdgeInsets.all(10),
+                color: Colors.white,
+                padding: EdgeInsets.fromLTRB(0, 50, 0, 50),
                 child: new FlatButton(
                   onPressed: () {
                     Navigator.pop(context, name.text);
                   },
-                  color: Colors.black,
+                  color: Theme.of(context).primaryColor,
                   padding: EdgeInsets.all(15),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10)),
