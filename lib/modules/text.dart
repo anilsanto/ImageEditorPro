@@ -37,7 +37,7 @@ class _TextEditorState extends State<TextEditor> {
                 ),
                 scrollPadding: EdgeInsets.all(20.0),
                 keyboardType: TextInputType.multiline,
-                maxLines: 99999,
+                maxLines: null,
                 style: TextStyle(
                   color: Colors.black,
                 ),
