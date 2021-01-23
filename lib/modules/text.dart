@@ -59,7 +59,7 @@ class _TextEditorState extends State<TextEditor> {
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 22,
-                        color: Colors.white),
+                        color: Colors.black),
                   ),
                 ),
               ),
