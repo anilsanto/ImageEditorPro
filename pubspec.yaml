@@ -15,12 +15,15 @@ dependencies:
   image_picker: ^0.6.3+1
   path_provider: ^1.6.5
   image_gallery_saver: ^1.2.2
-  permission_handler: ^5.0.1+2
+  permission_handler: ^5.0.1+1
   dio: ^3.0.9
   screenshot: ^0.1.1
   signature: ^3.0.0
   flutter_colorpicker: ^0.3.2
-  
+
+dependency_overrides:
+  permission_handler_platform_interface: 2.0.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
