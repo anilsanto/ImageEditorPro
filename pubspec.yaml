@@ -21,10 +21,6 @@ dependencies:
   signature: ^3.0.0
   flutter_colorpicker: ^0.3.2
   
-dependency_overrides:
-  permission_handler_platform_interface: 2.0.1
-  
-  
 dev_dependencies:
   flutter_test:
     sdk: flutter
